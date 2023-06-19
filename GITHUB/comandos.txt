@@ -83,13 +83,14 @@ git tab crea una rama del proyecto por ejemplo v01
 Existen las anotadas o las ligeras
 git tag =>lista de etiquetas
 git tag --delete 'nombre etiqueta'
-git tag -a anotada -m 'anotada'=>copia del proyecto
-git tag ligera =>no lleva anotacion
+git tag -a v1 -m 'anotada'=>copia del proyecto
+git tag v1 -lw ligera =>no lleva anotacion
 git show v1.5 => Muestra informacion de la etiqueta
 Tambien se pueden hacer etiquetas de anteriores commits
 git log --pretty=oneline
 git tag -a v1.2 'numero del commit'
-git push origin v1.5 =>SUbe etiquetas
+git push origin v1.5 =>SUbe etiqueta
+git push origin --tags => Sube varias etiquetas
 
 
 
