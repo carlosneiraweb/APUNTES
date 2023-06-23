@@ -1,0 +1,14 @@
+//https://kifarunix.com/install-netbeans-ide-on-ubuntu/#install-netbeans-with-installer-script
+
+Para instalar dos Netbeans se desistalan los dos. Luego se borra todos los directorios de la carpeta home:
+.netbeans
+.cache
+
+Despues instalar desde wget y luego desde Ubuntu Software
+
+
+java -version
+Saber donde se instalo Java => sudo update-alternatives --display java
+sudo nano /etc/environment =>Añadimos JAVA_HOME
+source /etc/environment =>Recargamos
+echo $JAVA_HOME => Muestra la ruta instalacion
