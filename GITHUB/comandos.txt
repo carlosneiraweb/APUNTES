@@ -54,7 +54,7 @@ git diff --staged => muestra los cambios que iran en el proximo commit
 
 
 ////////////CHECKOUT//////////////
-git chekout comandos.txt => desace los cambion hechos en el archivo, lo devuelvo al ultimo commit
+git chekout comandos.txt => desace los cambios hechos en el archivo, lo devuelvo al ultimo commit
 
 
 ///REPOSITORIO REMOTO///
@@ -149,7 +149,9 @@ https://www.atlassian.com/es/git/tutorials/undoing-changes/git-reset
 
 
                                 ///RAMAS////
-
+git branch => Listado de ramas
+git branch -v => Nos dice los ultimos commits en las distintas ramas
+git branch --merge|--no-merge => Nos muestra las ramas fusionadas o no fusionadas todavia
 git branch 'nueva rama' =>crea nueva rama pero no nos mueve a ella
 git checkout 'nueva rama' => Nos mueve a la nueva rama
 git checkout -b 'nueva rama' =>Crea y nos mueve a la nueva rama
@@ -159,13 +161,16 @@ git push origin 'nueva rama' => para subir remoto
 
 git branch origin --delete 'nueva rama' || git push origin --delete nueva_rama =>Elimina rama en remoto !! OJO DESDE MAIN !!
 
+git fetch origin => Mueve el HEAD de mi repositorio local al HEAD del origin(github) en caso de que se halla hecho push
+
 
 				///MERGE 
 https://git-scm.com/book/es/v2/Ramificaciones-en-Git-Procedimientos-B%C3%A1sicos-para-Ramificar-y-Fusionar
 
 //Antes de hacer un merge hay que volver a la ramam main
-git merge hotfix =>Hace merge desde MAIN a la rama señalada !! OJO DESDE MAIN !!
-git branch -d hotfix =>Eliminamos la rama
+git merge  =>Hace merge desde MAIN a la rama señalada !! OJO DESDE MAIN !!
+git branch -d  =>Eliminamos la rama
+git mergetool --tool = "nombre de la herramienta"
 hacer commit desde main
 
 
