@@ -3,3 +3,11 @@ Vaciar papelera ROOT=> sudo rm -rf ~/.local/share/Trash/*
 
 Crear Lanzador => gnome-desktop-item-edit ~/Escritorio --create-new
 
+ELIMINAR PROGRAMA Y CONFIGURACIONES
+
+sudo apt-get -y autoremove shutter
+sudo apt-get -y purge shutter
+
+
+sudo rm -R !("34"|"35") => ELimina todos los directorios menos estos
+

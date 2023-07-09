@@ -4,6 +4,7 @@ git <verb> --help
 man git -<verb>
 
 
+git clone -o server https://github.com/carlosneiraweb/git.git => Cambia nombre rama remota
 
 git commit -a -m 'La \a\ nos evita tener que añadir con \add\ los archivos y las modificaciones
 use "git reset HEAD <file>..." to unstage => saca del stage
@@ -101,6 +102,9 @@ git status muestra el estado del repositorio
 git log => muestra todos los commits
 git log --oneline
 git log --graph =>Muestra un grafico con las ramas y las uniones
+git log --branches=* => Muestra los commits de todas la ramas
+
+
 
         MOVERSE POR LOS COMMITS
 git log --oneline => Muestra los commits 
@@ -141,15 +145,20 @@ https://www.atlassian.com/es/git/tutorials/undoing-changes/git-reset
 
 
 
+			////CHECKOUT////
+
+git checkout 949ffa3 => NOS MUEVE A ESE COMMIT 'OJO' Te encuentras en estado 'detached HEAD'
+git checkout main =>Nos mueve al principio del proyecto
 
 
 
+			//////REVERT/////
 
                             
 
 
                                 ///RAMAS////
-git branch => Listado de ramas
+git branch // git branch -a => Listado de ramas
 git branch -v => Nos dice los ultimos commits en las distintas ramas
 git branch --merge|--no-merge => Nos muestra las ramas fusionadas o no fusionadas todavia
 git branch 'nueva rama' =>crea nueva rama pero no nos mueve a ella
