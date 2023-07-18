@@ -55,7 +55,7 @@ git diff --staged => muestra los cambios que iran en el proximo commit
 
 
 ////////////CHECKOUT//////////////
-git chekout comandos.txt => desace los cambios hechos en el archivo, lo devuelvo al ultimo commit
+git chekout comandos.txt => deshace los cambios hechos en el archivo, lo devuelvo al ultimo commit
 
 
 ///REPOSITORIO REMOTO///
@@ -106,12 +106,26 @@ git log --branches=* => Muestra los commits de todas la ramas
 
 
 
-        MOVERSE POR LOS COMMITS
+       			// MOVERSE POR LOS COMMITS //
 git log --oneline => Muestra los commits 
 git checkout 'numero del commit' nos mueve al commit señalado
 git reflog =>Muestra todos los cambios del HEAD a los commits
 	
 	
+					////CHECKOUT////
+
+git checkout 949ffa3 => NOS MUEVE A ESE COMMIT 'OJO' Te encuentras en estado 'detached HEAD'
+git ch 396aa53 -- segundo.txt => Devuelve el archivo al estado del commit
+				Luego add* y un nuevo commit
+
+git checkout main =>Nos mueve al principio del proyecto
+ git ch -f hola.txt => Devuelve el archivo al estado anterior "OJO solo en el area de trabajo NO EN EL STAGE", 
+			pero se debe haber hecho un ""add*""  sobre el archivo.
+			Para sacarlo del stage se puede usar git reset HEAD archivo.txt
+			Si se ha hecho un commit se puede devolver al stage con git reset --soft HEAD~1
+		       Se puede sacar el archivo del Stage con git restore --staged <archivo> y luego aplicar el checkout -f
+
+
 
 				/////GIT RESET //////
 				
@@ -120,20 +134,28 @@ https://www.atlassian.com/es/git/tutorials/undoing-changes/git-reset
 	git ls-remote => indica ultimo commit del remoto
 	git log --remotes
 1º Si no hemos subido los cambios al repositorio remoto
-
+	
+	
+	git reset nombre archivo =>  Saca el archivo del stage
+	
 	(Nos devuelve al estado anterior en los tres arboles, no es necesario haber echo un commit)
     	git reset --hard HEAD~1
 	git reset --hard d4e428e =>Nos mueve al commit señalado. OJO elimina commits posteriores, datos del stage y area de trabajo
 
 	//Funcionamiento predeterminado
 	git reset --mixed => Elimina las modificaciones del stage 
-			     
-	git reset --mixed HEAD~1 => Elimina del stage y el commit señalado
-	
-	OJO => En el area de trabajo las modificaciones siguen estando
-		Para que se queden como antes del 'add' hay que utilizar checkout + archivo o borrar los nuevos archivos
+			
+			
+			
+			***************************REVISAR***********************
+	git reset --mixed HEAD~1 => Elimina del stage pasandolo al area de trabajo y elimina commit señalado.
+			            Los commits por encima del seleccionado vuelven al area de trabajo.
+			            Son sacados del stage
+				    OJO => En el area de trabajo las modificaciones siguen estando
+				    Para que se queden como antes del 'add' hay que utilizar checkout + archivo o borrar los nuevos archivos
 
 	git reset --soft HEAD~1 => Elimina el ultimo commit dejando el stage y el area de trabajo como estaban antes de hacer el commit
+			           Saca el ultimo commit y lo deja en el stage
         git reset --soft 3ea22b3
 
 
@@ -145,12 +167,7 @@ https://www.atlassian.com/es/git/tutorials/undoing-changes/git-reset
 
 
 
-			////CHECKOUT////
-
-git checkout 949ffa3 => NOS MUEVE A ESE COMMIT 'OJO' Te encuentras en estado 'detached HEAD'
-git checkout main =>Nos mueve al principio del proyecto
-
-
+			
 
 			//////REVERT/////
 

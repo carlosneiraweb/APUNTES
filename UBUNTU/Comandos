@@ -11,3 +11,12 @@ sudo apt-get -y purge shutter
 
 sudo rm -R !("34"|"35") => ELimina todos los directorios menos estos
 
+
+Crear lanzador en escritorio 
+/usr/share/applications/
+
+Seleccionamos la aplicación y la copiamos al escritorio
+Despues damos permiso de ejecucion
+
+
+
