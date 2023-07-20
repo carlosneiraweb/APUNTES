@@ -1,0 +1,19 @@
+
+#Ejecuta es script dentro mysql
+#\. /home/carlos/Dropbox/APUNTES/MYSQL/lotes.txt
+#Desde fuera mysql 
+#carlos@server22:~$ mysql -u root -p < /home/carlos/Dropbox/APUNTES/MYSQL/lotes.txt
+#Copiando el resultado en otro archivo
+#carlos@server22:~$ mysql -u root -p < /home/carlos/Dropbox/APUNTES/MYSQL/lotes.txt >> /home/carlos/Dropbox/APUNTES/MYSQL/lotes2.txt;
+#mysql -t -u root -p => Añadimos la -t para dar formato salida mysql
+#mysql -v -u root -p => Añade las sentencias ejecutadas
+
+
+
+
+#use  menagerie;
+Select * from pet > /home/carlos/Dropbox/APUNTES/MYSQL/lotes2.txt;
+
+
+
+

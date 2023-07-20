@@ -1,0 +1,41 @@
+ORDER BY BINARY
+
+
+Devuelve la diferencia del tiempo:
+
+SELECT name, birth, CURDATE(),
+       TIMESTAMPDIFF(YEAR,birth,CURDATE()) AS age
+       FROM pet;
+       ->10
+       
+ SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');
+        -> 3
+  
+ Nos devuelve un mes de una fecha 
+SELECT name, birth, MONTH(birth) FROM pet; 
+SELECT name, birth FROM pet WHERE MONTH(birth) = 5;
+
+
+
+
+EXPLAIN select * from direccion where (select idUsuario from usuario where idUsuario = 6);
+
+EXPLAIN select idDireccion,calle,numeroPortal,ptr,codigoPostal,ciudad,provincia,pais from direccion dir inner join usuario usu on usu.idUsuario = dir.idDireccion where usu.idUsuario=6;  
+
+
+3.6 La fila que contiene el máximo de cierta columna
+
+SELECT article, dealer, price
+FROM   shop
+WHERE  price=(SELECT MAX(price) FROM shop);
+
+3.6.3 Máximo de Columnas por Grupo
+SELECT article, MAX(price) AS price
+FROM   shop
+GROUP BY article
+ORDER BY article;
+
+
+3.6.5 Uso de variables definidas por el usuario
+SELECT @min_price:=MIN(price),@max_price:=MAX(price) FROM shop;
+SELECT * FROM shop WHERE price=@min_price OR price=@max_price;

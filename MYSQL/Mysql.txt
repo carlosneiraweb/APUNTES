@@ -1,9 +1,14 @@
-EXPLAIN select * from direccion where (select idUsuario from usuario where idUsuario = 6);
-
-EXPLAIN select idDireccion,calle,numeroPortal,ptr,codigoPostal,ciudad,provincia,pais from direccion dir inner join usuario usu on usu.idUsuario = dir.idDireccion where usu.idUsuario=6;  
-
-alter table Desbloquear change correo encript varchar(255);
+Acceder a mysql => mysql -h localhost -u root -p // mysql -u root -p
 
 SET FOREIGN_KEY_CHECKS = 0;
 truncate secciones;
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+
+
+
+
+alter table Desbloquear change correo encript varchar(255);
+
+
